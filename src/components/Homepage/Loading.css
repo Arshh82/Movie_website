@@ -1,0 +1,38 @@
+.loader{
+    width: 60%;
+    background-color: grey;
+    height: 1.5rem;
+    margin: 5px;
+    border-radius: 10px;
+    animation-name: shimmer;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+.card-image{
+    background-color: grey;
+}
+
+#shimr{
+    animation-name: shimmer;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes shimmer{
+    0%{
+      background-color: white;
+    }
+    25%{
+        background-color:rgb(204, 204, 204);
+    }
+    50%{
+        background-color: white;
+    }
+    75%{
+        background-color:rgb(204, 204, 204);
+    }
+    100%{
+        background-color: white;
+    }
+ }
