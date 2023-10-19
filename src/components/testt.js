@@ -1,15 +1,12 @@
 import React from 'react'
-import Loading from './Homepage/Loading'
+import Pagintion from './Homepage/Pagination'
 
-const Testt = () => {
+const testt = () => {
   return (
     <>
-    <div >
-    <Loading/>
-      
-    </div>
+    <Pagintion/>
     </>
   )
 }
 
-export default Testt
+export default testt

@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './Home.css'
 import axios from 'axios';
 import Loading from './Loading';
+import '../../../node_modules/bootstrap/'
+import  Pagination  from './Pagination';
 
 const Home = () => {
   let [data, updatedata] = useState([]);
+
+  const [currentPage,setCurrentPage] = useState(1);
+  const [postsPerPage,setPostsPerPage] = useState(61);
+  
 
   useEffect(() => {
     show();
@@ -16,12 +22,17 @@ const Home = () => {
     console.log(data)
     // alert('sucess')
   }
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+
     
   return (
     <>
     <div className='Home-container'>
      <div className='movie-container'>
-         {data.length===0?<Loading/>:data.map((v) =>{
+         {currentPosts.length===0?<Loading/>:currentPosts.map((v) =>{
            return (
              <div className='card' key={v.id}>
                <div className='card-image'>
@@ -37,7 +48,11 @@ const Home = () => {
            )})}
 
      </div>
+     
     </div>
+    <div className='fkl'>
+    
+     </div>
       
     </>
   );

@@ -72,6 +72,7 @@
 }
 
 
+
 @media screen and (max-width: 1380px) {
     .Navbar-menu{
         display: none;
@@ -79,6 +80,5 @@
     .hemburger-menu{
         display: block;
     }
-
     
 }
