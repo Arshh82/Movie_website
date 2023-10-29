@@ -3,14 +3,13 @@ import './Home.css'
 import axios from 'axios';
 import Loading from './Loading';
 import '../../../node_modules/bootstrap/'
-import  Pagination  from './Pagination';
 import Pagintion from './Pagination';
 
 const Home = () => {
   let [data, updatedata] = useState([]);
 
   const [currentPage,setCurrentPage] = useState(1);
-  const [postsPerPage,setPostsPerPage] = useState(12);
+  const [postsPerPage] = useState(13);
   
 
   useEffect(() => {
@@ -20,8 +19,7 @@ const Home = () => {
   async function show() {
     var res = await axios.get("https://movies-r87g.onrender.com/Eyeglassrangeapi");
     updatedata(res.data);
-    console.log(data)
-    // alert('sucess')
+    // console.log(data)
   }
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -54,10 +52,11 @@ const Home = () => {
      </div>
      
     </div>
-    <div className='paginate-section'>
-    <Pagintion postsPerPage={postsPerPage} data={data.length} paginate={paginate}/>
-    
-     </div>
+      <div className='paginate-section'>
+        <Pagintion postsPerPage={postsPerPage} 
+                   data={data.length} 
+                  paginate={paginate} />
+      </div>
       
     </>
   );
