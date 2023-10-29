@@ -20,6 +20,10 @@ const Navbar = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
 
 
   return (
@@ -29,14 +33,14 @@ const Navbar = () => {
           <RxHamburgerMenu onClick={handleShow}></RxHamburgerMenu>
 
         </div>
-        <div className='Navbar-Logo'>
-          <img src={logo} alt='X' className='d-flex h-100 w-100' />
+        <div className='Navbar-Logo' onClick={refreshPage}>
+          <Link to='/'><img src={logo} alt='X' className='d-flex h-100 w-100' /></Link>
         </div>
 
         <div className='Navbar-menu'>
           <ul className='menu-list'>
             <div>
-            <Link to='/' style={{textDecoration:'none',color:'black'}}><li id='mene-sec'>Home</li></Link>
+            <Link to='/' style={{textDecoration:'none',color:'black'}}><li id='mene-sec' onClick={refreshPage}>Home</li></Link>
             </div>
             <div>
               <li id='mene-sec' >4K HDR</li>
