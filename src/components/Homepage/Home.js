@@ -54,7 +54,7 @@ const Home = () => {
      </div>
      
     </div>
-    <div className='fkl'>
+    <div className='paginate-section'>
     <Pagintion postsPerPage={postsPerPage} data={data.length} paginate={paginate}/>
     
      </div>
