@@ -3,26 +3,30 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Pagination from 'react-bootstrap/Pagination';
 
 
-const Pagintion = ({postsPerPage, data}) => {
+const Pagintion = ({postsPerPage, data, paginate}) => {
+  const pageNumbers = [];
 
-    let active = 2;
-    let items = [];
-    for (let number = 1; number <= 5; number++) {
-      items.push(
-        <Pagination.Item key={number} active={number === active}>
-          {number}
-        </Pagination.Item>,
-      );
-    }
+  for(let i = 1; i<= Math.ceil(data/postsPerPage); i++){
+    pageNumbers.push(i)
+  }
+   
   return (
       
    
-    <>
-    <div >
-    <Pagination>{items}</Pagination>
-      
-    </div>
-    </>
+    <nav>
+    <ul className='pagination'>
+    {pageNumbers.map(number => (
+      <li key={number} className='page-item'>
+      <a href='#' onClick={()=> paginate(number)} className='page-link'>
+        {number}
+      </a>
+
+      </li>
+    ))}
+
+    </ul>
+    
+    </nav>
   )
 }
 

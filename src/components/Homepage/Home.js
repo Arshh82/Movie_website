@@ -4,12 +4,13 @@ import axios from 'axios';
 import Loading from './Loading';
 import '../../../node_modules/bootstrap/'
 import  Pagination  from './Pagination';
+import Pagintion from './Pagination';
 
 const Home = () => {
   let [data, updatedata] = useState([]);
 
   const [currentPage,setCurrentPage] = useState(1);
-  const [postsPerPage,setPostsPerPage] = useState(61);
+  const [postsPerPage,setPostsPerPage] = useState(12);
   
 
   useEffect(() => {
@@ -26,6 +27,9 @@ const Home = () => {
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+
+
+  const paginate = pageNumbers => setCurrentPage(pageNumbers)
 
     
   return (
@@ -51,6 +55,7 @@ const Home = () => {
      
     </div>
     <div className='fkl'>
+    <Pagintion postsPerPage={postsPerPage} data={data.length} paginate={paginate}/>
     
      </div>
       

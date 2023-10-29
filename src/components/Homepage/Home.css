@@ -15,6 +15,8 @@
     display: grid;
     grid-template-columns: repeat(auto-fit,
     minmax(300px,1fr));
+    animation-duration: 0.75s;
+   transition: all 0.5s;
 
 }
 .card{
@@ -54,8 +56,8 @@
 }
 
 .cimage:hover{
-    width: 102%;
-    height: 102%;
+    width: 108%;
+    height: 108%;
 }
 .card-txt{
     display: flex;
